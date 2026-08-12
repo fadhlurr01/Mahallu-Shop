@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. PRODUCT DATA WITH SHOPEE-STYLE PRICE ANCHORING & SIZE DISCOUNTS
+  // 2. PRODUCT DATA (4 BALANCED FULL-PORTRAIT CATALOG ITEMS WITH HARGA CORET)
   // --------------------------------------------------------------------------
   const products = [
     {
