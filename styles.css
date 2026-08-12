@@ -190,7 +190,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   3. HEADER & GLASSMORPHISM NAV
+   3. HEADER & GLASSMORPHISM NAV (CLEAN NON-CLUTTERED ACTIONS)
    -------------------------------------------------------------------------- */
 .header-sticky {
   position: sticky;
@@ -293,30 +293,32 @@ button {
   gap: 1rem;
 }
 
-.btn-wa-mini {
+.btn-catalog-mini {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: linear-gradient(135deg, var(--maroon), var(--maroon-deep));
-  color: var(--paper);
+  background-color: var(--paper);
+  color: var(--maroon);
   font-weight: 700;
   font-size: 0.88rem;
-  padding: 0.65rem 1.25rem;
+  padding: 0.65rem 1.35rem;
   border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 14px rgba(110, 42, 58, 0.3);
+  border: 1.5px solid var(--line);
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
 }
 
-.btn-wa-mini:hover {
+.btn-catalog-mini:hover {
+  border-color: var(--maroon);
+  background-color: var(--maroon);
+  color: var(--paper);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(110, 42, 58, 0.4);
+  box-shadow: 0 6px 18px rgba(110, 42, 58, 0.25);
 }
 
-.btn-wa-mini svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
+.btn-catalog-mini svg {
+  width: 17px;
+  height: 17px;
 }
 
 .mobile-toggle {
@@ -369,7 +371,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. HERO SECTION & HERO CARD (TRANSLUCENT GLASS + ISLAMIC MOTIF BACKDROP)
+   4. HERO SECTION & SLEEK LUXURY EDITORIAL HERO SHOWCASE (NON-HEAVY)
    -------------------------------------------------------------------------- */
 .hero-section {
   padding: 4.5rem 0 5.5rem 0;
@@ -518,50 +520,30 @@ button {
   position: relative;
 }
 
-/* Translucent Glassmorphic Hero Card Frame */
-.hero-card {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(248, 244, 239, 0.58) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-radius: 36px 14px 36px 14px;
-  padding: 1.15rem;
-  box-shadow: 0 30px 80px rgba(110, 42, 58, 0.16);
-  border: 1.5px solid rgba(195, 158, 99, 0.45);
+/* Sleek Luxury Editorial Hero Showcase (No Heavy Double Border) */
+.hero-card-editorial {
   position: relative;
+  border-radius: 28px;
   overflow: hidden;
+  box-shadow: 0 24px 60px rgba(74, 21, 33, 0.16);
+  border: 1px solid rgba(195, 158, 99, 0.38);
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
-/* Islamic Floral Brokat Watermark overlay on Hero Card */
-.hero-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 180px;
-  height: 180px;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 C65 25, 100 35, 100 50 C100 65, 65 75, 50 100 C35 75, 0 65, 0 50 C0 35, 35 25, 50 0 Z' fill='%23C39E63' fill-opacity='0.06'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 1;
+.hero-card-editorial:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 75px rgba(74, 21, 33, 0.22);
 }
 
-.hero-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 38px 90px rgba(110, 42, 58, 0.22);
-}
-
-.hero-card-image-box {
+.hero-card-editorial .hero-card-image-box {
   width: 100%;
   aspect-ratio: 3 / 4;
-  border-radius: 28px 10px 28px 10px;
   overflow: hidden;
   position: relative;
   background-color: var(--ivory-soft);
-  z-index: 2;
 }
 
-.hero-card-image {
+.hero-card-editorial .hero-card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -569,71 +551,70 @@ button {
   transition: transform var(--transition-smooth);
 }
 
-.hero-card:hover .hero-card-image {
-  transform: scale(1.05);
+.hero-card-editorial:hover .hero-card-image {
+  transform: scale(1.04);
 }
 
 .hero-card-tag {
   position: absolute;
-  top: 1.75rem;
-  left: 1.75rem;
+  top: 1.25rem;
+  left: 1.25rem;
   background: linear-gradient(135deg, rgba(35, 28, 24, 0.92) 0%, rgba(74, 21, 33, 0.92) 100%);
   backdrop-filter: blur(14px);
   color: var(--gold);
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 800;
-  padding: 0.5rem 1.15rem;
+  padding: 0.45rem 1.05rem;
   border-radius: 50px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid rgba(195, 158, 99, 0.5);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   z-index: 3;
 }
 
-.hero-card-info {
+/* Translucent Floating Glass Capsule Overlay */
+.hero-card-info-floating {
   position: absolute;
-  bottom: 1.75rem;
-  left: 1.75rem;
-  right: 1.75rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(248, 244, 239, 0.76) 100%);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 1.25rem 1.4rem;
-  border-radius: 22px 12px 22px 12px;
-  border: 1.5px solid rgba(195, 158, 99, 0.45);
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  border: 1px solid rgba(195, 158, 99, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 16px 40px rgba(110, 42, 58, 0.18);
-  color: var(--ink);
+  box-shadow: 0 12px 32px rgba(43, 36, 32, 0.12);
   z-index: 3;
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  transition: background var(--transition-fast);
 }
 
-.hero-card:hover .hero-card-info {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 244, 239, 0.85) 100%);
-  border-color: rgba(110, 42, 58, 0.4);
+.hero-card-editorial:hover .hero-card-info-floating {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 244, 239, 0.84) 100%);
 }
 
 .hero-card-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--ink);
   letter-spacing: -0.01em;
 }
 
 .hero-card-sub {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--ink-soft);
   font-weight: 500;
 }
 
-.hero-card-info .price-anchoring-box {
+.hero-card-info-floating .price-anchoring-box {
   background: rgba(255, 255, 255, 0.65);
-  padding: 0.45rem 0.85rem;
-  border-radius: 12px;
-  border: 1px solid rgba(195, 158, 99, 0.35);
+  padding: 0.4rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(195, 158, 99, 0.3);
   backdrop-filter: blur(8px);
 }
 
@@ -2014,7 +1995,7 @@ button {
   .catalog-grid, .lookbook-row {
     grid-template-columns: 1fr;
   }
-  .nav-menu, .btn-wa-mini {
+  .nav-menu, .btn-catalog-mini {
     display: none;
   }
   .mobile-toggle, .mobile-drawer {
