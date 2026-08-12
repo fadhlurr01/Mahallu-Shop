@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.pyc
+__pycache__/
+crop_images.py
+process_new_photos.py
+process_pristine_photos.py
+process_black_pearl.py
