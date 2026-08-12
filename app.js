@@ -417,5 +417,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initScrollReveals();
+
+  // --------------------------------------------------------------------------
+  // 6. DYNAMIC SCROLLSPY NAVIGATION TRACKER (LINE FOLLOWS SCROLL)
+  // --------------------------------------------------------------------------
+  function initScrollspy() {
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link, .mobile-drawer .nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function onScroll() {
+      let currentSectionId = '';
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === `#${currentSectionId}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  initScrollspy();
 });
 

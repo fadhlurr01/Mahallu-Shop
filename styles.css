@@ -260,31 +260,36 @@ button {
 }
 
 .nav-link {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: var(--ink-soft);
   position: relative;
-  padding: 0.35rem 0;
+  padding: 0.5rem 0.2rem;
+  transition: color 0.3s var(--ease-smooth);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 3.2px;
   background: linear-gradient(90deg, var(--maroon), var(--gold));
-  transition: width var(--transition-fast);
-  border-radius: 2px;
+  border-radius: 4px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--maroon);
+  font-weight: 700;
 }
 
 .nav-link:hover::after, .nav-link.active::after {
-  width: 100%;
+  transform: translateX(-50%) scaleX(1);
+  opacity: 1;
 }
 
 .nav-actions {
