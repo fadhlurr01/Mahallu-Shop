@@ -139,10 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    catalogGrid.innerHTML = items.map((prod, idx) => `
-      <div class="product-card scroll-reveal delay-${(idx % 4) + 1}" data-category="${prod.category}">
+    catalogGrid.innerHTML = items.map((prod) => `
+      <div class="product-card" data-category="${prod.category}">
         <div class="product-thumb">
-          <img src="${prod.image}" alt="${prod.title}" loading="lazy">
+          <img src="${prod.image}" alt="${prod.title}">
           <span class="category-pill ${prod.badgeClass}">${prod.categoryLabel}</span>
           <span class="shopee-ribbon-badge">${prod.discountBadge} DISKON</span>
         </div>
@@ -172,16 +172,13 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
-    // Rebind Quick View listeners & Observe new product cards
+    // Rebind Quick View listeners
     document.querySelectorAll('.btn-quickview').forEach(btn => {
       btn.addEventListener('click', () => {
         const prodId = btn.getAttribute('data-id');
         openQuickView(prodId);
       });
     });
-
-    // Re-observe newly rendered catalog cards for scroll reveal
-    observeScrollReveals();
   }
 
   // Initial Render
@@ -313,72 +310,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 4. ULTRA SMOOTH INTERSECTION OBSERVER FOR PAGE SCROLL REVEAL ANIMATIONS
+  // 4. INTERSECTION OBSERVER FOR SECTION HEADERS & MAJOR BLOCKS (ALWAYS KEEP PRODUCT CARDS VISIBLE)
   // --------------------------------------------------------------------------
-  let scrollObserver = null;
-
   function initScrollReveals() {
-    // Automatically add .scroll-reveal to all major sections, section headers, cards, and footer
     const targetSelectors = [
       '.section-header',
       '.hero-content',
       '.hero-card-wrapper',
-      '.trust-card',
       '.story-content',
       '.story-visual-wrapper',
-      '.about-card',
-      '.lookbook-card',
-      '.testimonial-card',
       '.bank-trust-banner',
-      '.step-card',
-      '.cta-banner-card',
-      '.footer-grid'
+      '.cta-banner-card'
     ];
 
     targetSelectors.forEach(selector => {
-      document.querySelectorAll(selector).forEach((el, index) => {
-        if (!el.classList.contains('scroll-reveal')) {
-          el.classList.add('scroll-reveal');
-          // Add staggered delay for grid items
-          if (selector.includes('card') || selector.includes('box')) {
-            const delayNum = (index % 4) + 1;
-            el.classList.add(`delay-${delayNum}`);
+      document.querySelectorAll(selector).forEach(el => {
+        el.classList.add('scroll-reveal');
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
           }
-        }
-      });
-    });
+        });
+      }, { threshold: 0.1 });
 
-    observeScrollReveals();
-  }
-
-  function observeScrollReveals() {
-    if (!('IntersectionObserver' in window)) {
-      // Fallback for very old browsers
+      document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    } else {
       document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('revealed'));
-      return;
     }
-
-    if (scrollObserver) {
-      scrollObserver.disconnect();
-    }
-
-    scrollObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          scrollObserver.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
-
-    document.querySelectorAll('.scroll-reveal:not(.revealed)').forEach(el => {
-      scrollObserver.observe(el);
-    });
   }
 
-  // Initialize Scroll Reveal Animations
   initScrollReveals();
 });
