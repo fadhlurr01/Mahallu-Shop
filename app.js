@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. PRODUCT DATA (SCREENSHOT_1351 FIX: YASMIN TARA IMAGE RESTORED TO WA 16.48.20)
+  // 2. PRODUCT DATA (CARD 2 UPDATED TO HD NO-PHONE MODEL PHOTO & SPECIFIC PRICELIST)
   // --------------------------------------------------------------------------
   const products = [
     {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { size: 'XXL', originalPrice: 'Rp 300.000', discountPrice: 'Rp 132.600', badge: '-56%' }
       ],
       material: 'Bahan Tile Brokat Etnik & Furing Katun Silk Adem',
-      image: 'assets/prod-yasmin-tara.jpg', // WhatsApp Image 2026-08-12 at 16.48.20 (1).jpeg (Screenshot_1351 fix)
+      image: 'assets/prod-yasmin-tara-hd.jpg', // HD No-Phone Model Photo from WhatsApp 16.48.20
       badgeClass: 'gamis',
       desc: 'Yasmin Tara by Mahallu shop — Soft beige manis, brokat mewah & furing adem. Sangat cocok dipadukan dengan hijab voal untuk kondangan.'
     },
