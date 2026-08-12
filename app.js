@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const WA_NUMBER = '628572345065';
 
   // Helper function to build dynamic WhatsApp URL
-  function buildWaUrl(productName = '', size = '') {
+  function buildWaUrl(productName = '', size = '', price = '') {
     let message = '';
     if (productName) {
       const sizeText = size ? ` (Ukuran: ${size})` : '';
-      message = `Halo Mahallu Shop! Saya tertarik dengan produk "${productName}"${sizeText}, apakah masih tersedia?`;
+      const priceText = price ? ` - ${price}` : '';
+      message = `Halo Mahallu Shop! Saya tertarik dengan produk "${productName}"${sizeText}${priceText}, apakah masih tersedia?`;
     } else {
       message = `Halo Mahallu Shop! Saya lihat katalognya dan tertarik dengan koleksinya, boleh minta info lebih lanjut?`;
     }
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. PRODUCT DATA (4 PRISTINE MAHALLU SHOP INSTAGRAM PRODUCTS WITH EXACT USER PRICES & PHOTOS)
+  // 2. PRODUCT DATA WITH SHOPEE-STYLE PRICE ANCHORING & SIZE DISCOUNTS
   // --------------------------------------------------------------------------
   const products = [
     {
@@ -52,9 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Annisa Syar\'i Set Maroon',
       category: 'syari',
       categoryLabel: 'Set Syar\'i',
-      price: 'Rp 160.999',
+      originalPrice: 'Rp 350.000',
+      discountPrice: 'Rp 160.999',
+      discountBadge: '-54%',
+      sizes: [
+        { size: 'M', originalPrice: 'Rp 350.000', discountPrice: 'Rp 160.999', badge: '-54%' },
+        { size: 'L', originalPrice: 'Rp 350.000', discountPrice: 'Rp 165.999', badge: '-53%' },
+        { size: 'XL', originalPrice: 'Rp 350.000', discountPrice: 'Rp 175.999', badge: '-50%' }
+      ],
       material: 'Bahan Premium Ceruty Armany & Sulam Tangan Exquisite',
-      image: 'assets/prod-annisa-maroon-model.jpg',
+      image: 'assets/prod-annisa-exact-model.jpg',
       badgeClass: 'syari',
       desc: 'Annisa by Mahallu shop — Set Gamis Syar\'i mewah warna deep maroon dengan aplikasi sulam bunga anggun di khimar panjang & manset lengan. Busui friendly.'
     },
@@ -63,33 +71,54 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Yasmin Tara Gamis Brokat Soft Beige',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 160.999',
+      originalPrice: 'Rp 250.000',
+      discountPrice: 'Rp 117.000',
+      discountBadge: '-53%',
+      sizes: [
+        { size: 'M', originalPrice: 'Rp 250.000', discountPrice: 'Rp 117.000', badge: '-53%' },
+        { size: 'XL', originalPrice: 'Rp 275.000', discountPrice: 'Rp 128.700', badge: '-53%' },
+        { size: 'XXL', originalPrice: 'Rp 300.000', discountPrice: 'Rp 132.600', badge: '-56%' }
+      ],
       material: 'Bahan Tile Brokat Etnik & Furing Katun Silk Adem',
-      image: 'assets/prod-yasmin-tara-wa.jpg',
+      image: 'assets/prod-yasmin-exact-model.jpg',
       badgeClass: 'gamis',
-      desc: 'Yasmin Tara by Mahallu shop — Warnanya soft beige manis, brokatnya mewah & tidak gatal di kulit. Lengan puff modern dengan kerah Shanghai yang sangat pas untuk kondangan.'
+      desc: 'Yasmin Tara by Mahallu shop — Soft beige manis, brokat mewah & furing adem. Sangat cocok dipadukan dengan hijab voal untuk kondangan.'
     },
     {
       id: 'prod-karina-brown',
       title: 'Karina Gamis Outer Lace Espresso',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 117.000',
+      originalPrice: 'Rp 250.000',
+      discountPrice: 'Rp 117.000',
+      discountBadge: '-53%',
+      sizes: [
+        { size: 'M', originalPrice: 'Rp 250.000', discountPrice: 'Rp 117.000', badge: '-53%' },
+        { size: 'XL', originalPrice: 'Rp 275.000', discountPrice: 'Rp 128.700', badge: '-53%' }
+      ],
       material: 'Outer Tile Etnik Lace & Inner Ceruty Armany',
-      image: 'assets/prod-karina-lace-brown-model.jpg',
+      image: 'assets/prod-karina-exact-model.jpg',
       badgeClass: 'gamis',
-      desc: 'Karina by Mahallu shop — Kalau kamu suka gamis yang kelihatan mewah tapi tetap elegan, Karina ini wajib dimiliki. Outer lace bermotif floral dengan warna cokelat espresso mewah.'
+      desc: 'Karina by Mahallu shop — Tampilan mewah dan elegan dengan outer lace cokelat espresso yang memberikan siluet tinggi & anggun.'
     },
     {
       id: 'prod-black-pearl',
       title: 'Gamis Exclusive Black Pearl',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 139.000',
+      originalPrice: 'Rp 159.500',
+      discountPrice: 'Rp 143.550',
+      discountBadge: '-10%',
+      sizes: [
+        { size: 'S', originalPrice: 'Rp 159.500', discountPrice: 'Rp 143.550', badge: '-10%' },
+        { size: 'M', originalPrice: 'Rp 159.500', discountPrice: 'Rp 143.550', badge: '-10%' },
+        { size: 'L', originalPrice: 'Rp 159.500', discountPrice: 'Rp 143.550', badge: '-10%' },
+        { size: 'XL', originalPrice: 'Rp 159.500', discountPrice: 'Rp 143.550', badge: '-10%' }
+      ],
       material: 'Bahan Exclusive Jetblack & Mutiara Shoulder Ruffle',
-      image: 'assets/dress-black-pearl-model.jpg',
+      image: 'assets/prod-black-pearl-exact-model.jpg',
       badgeClass: 'gamis',
-      desc: 'Gamis Exclusive Black Pearl — Dress warna hitam pekat eksklusif dengan hiasan mutiara di leher & pundak ruffle bergelombang. Memberikan siluet tinggi & sangat anggun untuk pesta malam.'
+      desc: 'Gamis Exclusive Black Pearl — Dress warna hitam pekat eksklusif dengan hiasan mutiara di leher & pundak ruffle bergelombang.'
     }
   ];
 
@@ -115,13 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="product-thumb">
           <img src="${prod.image}" alt="${prod.title}" loading="lazy">
           <span class="category-pill ${prod.badgeClass}">${prod.categoryLabel}</span>
-          <span class="hanging-price-tag">${prod.price}</span>
+          <span class="shopee-ribbon-badge">${prod.discountBadge} DISKON</span>
         </div>
         <div class="product-details">
           <h3 class="product-title">${prod.title}</h3>
           <p class="product-material">${prod.material}</p>
+          
+          <!-- Shopee Style Price Anchoring -->
+          <div class="product-price-section">
+            <div class="price-anchoring-box">
+              <span class="original-price-coret">${prod.originalPrice}</span>
+              <span class="discount-price-highlight">${prod.discountPrice}</span>
+              <span class="shopee-discount-badge">${prod.discountBadge}</span>
+            </div>
+          </div>
+
           <div class="product-actions">
-            <a href="${buildWaUrl(prod.title)}" target="_blank" rel="noopener" class="btn-order-wa">
+            <a href="${buildWaUrl(prod.title, prod.sizes[0].size, prod.discountPrice)}" target="_blank" rel="noopener" class="btn-order-wa">
               ${WA_SVG_ICON}
               Order via WA
             </a>
@@ -175,61 +214,81 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 3. QUICK VIEW MODAL LOGIC
+  // 3. QUICK VIEW MODAL LOGIC WITH DYNAMIC SIZE PRICE ANCHORING
   // --------------------------------------------------------------------------
   const modalOverlay = document.getElementById('quickViewModal');
   const modalCloseBtn = document.getElementById('modalClose');
   const modalImage = document.getElementById('modalImage');
   const modalCategory = document.getElementById('modalCategory');
   const modalTitle = document.getElementById('modalTitle');
-  const modalPrice = document.getElementById('modalPrice');
+  const modalPriceBox = document.getElementById('modalPriceBox');
   const modalDesc = document.getElementById('modalDesc');
   const modalWaBtn = document.getElementById('modalWaBtn');
-  const sizeBtns = document.querySelectorAll('.size-btn');
+  const modalSizeOptions = document.getElementById('modalSizeOptions');
 
-  let selectedSize = 'M';
+  let currentModalProd = null;
+  let selectedSizeObj = null;
 
   function openQuickView(prodId) {
     const prod = products.find(p => p.id === prodId);
     if (!prod || !modalOverlay) return;
 
+    currentModalProd = prod;
     modalImage.src = prod.image;
     modalImage.alt = prod.title;
     modalCategory.textContent = prod.categoryLabel;
     modalTitle.textContent = prod.title;
-    modalPrice.textContent = prod.price;
     modalDesc.textContent = prod.desc;
 
-    // Reset selected size to M
-    selectedSize = 'M';
-    sizeBtns.forEach(b => {
-      b.classList.toggle('selected', b.getAttribute('data-size') === 'M');
-    });
+    // Render Size Option Buttons dynamically with price info
+    renderSizeOptions(prod);
 
-    // Update Modal WA link
-    updateModalWaBtn(prod.title);
+    // Default select first size
+    selectSize(prod.sizes[0]);
 
     // Show modal
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
-  function updateModalWaBtn(title) {
-    if (modalWaBtn) {
-      modalWaBtn.href = buildWaUrl(title, selectedSize);
-    }
+  function renderSizeOptions(prod) {
+    if (!modalSizeOptions) return;
+    modalSizeOptions.innerHTML = prod.sizes.map((s, idx) => `
+      <button class="size-btn ${idx === 0 ? 'selected' : ''}" data-size="${s.size}">
+        <span>Size ${s.size}</span>
+        <span class="size-price-sub">${s.discountPrice}</span>
+      </button>
+    `).join('');
+
+    // Rebind size click events
+    modalSizeOptions.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sz = btn.getAttribute('data-size');
+        const sObj = prod.sizes.find(item => item.size === sz);
+        if (sObj) {
+          modalSizeOptions.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectSize(sObj);
+        }
+      });
+    });
   }
 
-  sizeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sizeBtns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedSize = btn.getAttribute('data-size');
-      if (modalTitle) {
-        updateModalWaBtn(modalTitle.textContent);
-      }
-    });
-  });
+  function selectSize(sObj) {
+    selectedSizeObj = sObj;
+    if (modalPriceBox) {
+      modalPriceBox.innerHTML = `
+        <div class="price-anchoring-box" style="font-size: 1.1rem;">
+          <span class="original-price-coret" style="font-size: 1rem;">${sObj.originalPrice}</span>
+          <span class="discount-price-highlight" style="font-size: 1.6rem;">${sObj.discountPrice}</span>
+          <span class="shopee-discount-badge" style="font-size: 0.82rem; padding: 0.25rem 0.65rem;">${sObj.badge}</span>
+        </div>
+      `;
+    }
+    if (modalWaBtn && currentModalProd) {
+      modalWaBtn.href = buildWaUrl(currentModalProd.title, sObj.size, sObj.discountPrice);
+    }
+  }
 
   if (modalCloseBtn && modalOverlay) {
     modalCloseBtn.addEventListener('click', closeModal);

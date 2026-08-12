@@ -19,6 +19,10 @@
   --maroon-deep: #4A1521;
   --maroon-light: rgba(110, 42, 58, 0.07);
   
+  /* Shopee Style Discount Red Accent */
+  --shopee-red: #EE4D2D;
+  --shopee-red-light: rgba(238, 77, 45, 0.1);
+  
   /* Luxury Metallic & Category Accents */
   --gold: #C39E63;
   --gold-dark: #A47F46;
@@ -423,7 +427,6 @@ button {
   margin-bottom: 2.75rem;
 }
 
-/* Primary Hero Button with Official WhatsApp Icon */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -473,7 +476,6 @@ button {
   transform: translateY(-2px);
 }
 
-/* Trust Badges Strip under CTA */
 .hero-badges {
   display: flex;
   align-items: center;
@@ -575,14 +577,45 @@ button {
   color: var(--ink);
 }
 
-.hero-card-price {
-  font-weight: 800;
+/* --------------------------------------------------------------------------
+   5. SHOPEE STYLE PRICE ANCHORING (HARGA CORET) STYLING
+   -------------------------------------------------------------------------- */
+.price-anchoring-box {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.original-price-coret {
+  color: #A0968E;
+  font-size: 0.85rem;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.discount-price-highlight {
   color: var(--maroon);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.shopee-discount-badge {
+  background-color: var(--shopee-red);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(238, 77, 45, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.2rem;
 }
 
 /* --------------------------------------------------------------------------
-   5. TRUST STRIP
+   6. TRUST STRIP
    -------------------------------------------------------------------------- */
 .trust-section {
   padding: 3rem 0;
@@ -646,7 +679,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   6. ABOUT / TENTANG SINGKAT (3 PILLARS)
+   7. ABOUT / TENTANG SINGKAT (3 PILLARS)
    -------------------------------------------------------------------------- */
 .about-section {
   padding: 6.5rem 0;
@@ -715,7 +748,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   7. PRODUCT CATALOG & CATEGORY FILTERING
+   8. PRODUCT CATALOG & CATEGORY FILTERING
    -------------------------------------------------------------------------- */
 .catalog-section {
   padding: 6.5rem 0;
@@ -732,7 +765,6 @@ button {
   margin-bottom: 3.5rem;
 }
 
-/* Category Pill Buttons */
 .filter-pills {
   display: flex;
   align-items: center;
@@ -765,7 +797,6 @@ button {
   box-shadow: 0 6px 18px rgba(110, 42, 58, 0.28);
 }
 
-/* Search Bar Input */
 .catalog-search {
   position: relative;
   width: 100%;
@@ -801,14 +832,12 @@ button {
   color: var(--gold-dark);
 }
 
-/* Catalog Grid Container */
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2.25rem;
 }
 
-/* Product Card Styling */
 .product-card {
   background-color: var(--paper);
   border-radius: var(--radius-lg);
@@ -846,7 +875,6 @@ button {
   transform: scale(1.06);
 }
 
-/* Category Pill Badge on Image */
 .category-pill {
   position: absolute;
   top: 1.15rem;
@@ -864,22 +892,21 @@ button {
 .category-pill.gamis { background-color: var(--maroon); }
 .category-pill.syari { background-color: var(--plum); }
 
-/* Hanging Price Tag Badge */
-.hanging-price-tag {
+/* Shopee Style Ribbon Badge on Image */
+.shopee-ribbon-badge {
   position: absolute;
   top: 1.15rem;
   right: 1.15rem;
-  background-color: var(--paper);
-  color: var(--maroon);
+  background: var(--shopee-red);
+  color: #FFFFFF;
   font-weight: 800;
-  font-size: 0.92rem;
-  padding: 0.45rem 0.95rem;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 82%, 82% 100%, 0% 100%);
-  border-left: 3px solid var(--gold);
-  box-shadow: var(--shadow-sm);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(238, 77, 45, 0.4);
+  letter-spacing: 0.04em;
 }
 
-/* Card Body */
 .product-details {
   padding: 1.5rem;
   display: flex;
@@ -898,8 +925,12 @@ button {
 .product-material {
   font-size: 0.84rem;
   color: var(--ink-soft);
-  margin-bottom: 1.35rem;
+  margin-bottom: 1rem;
   line-height: 1.5;
+}
+
+.product-price-section {
+  margin-bottom: 1.25rem;
 }
 
 .product-actions {
@@ -954,7 +985,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   8. LOOKBOOK (INSPIRASI OUTFIT) - HORIZONTAL SCROLL ROW
+   9. LOOKBOOK (INSPIRASI OUTFIT) - HORIZONTAL SCROLL ROW
    -------------------------------------------------------------------------- */
 .lookbook-section {
   padding: 6.5rem 0;
@@ -1038,7 +1069,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. TESTIMONIALS (ULASAN PELANGGAN)
+   10. TESTIMONIALS (ULASAN PELANGGAN)
    -------------------------------------------------------------------------- */
 .testimonials-section {
   padding: 6.5rem 0;
@@ -1111,7 +1142,6 @@ button {
   color: var(--ink-soft);
 }
 
-/* Official Bank Transfer Safety Trust Banner */
 .bank-trust-banner {
   background-color: var(--paper);
   border-radius: var(--radius-lg);
@@ -1155,7 +1185,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   10. CARA ORDER (4 STEPS)
+   11. CARA ORDER (4 STEPS)
    -------------------------------------------------------------------------- */
 .order-steps-section {
   padding: 6.5rem 0;
@@ -1212,7 +1242,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   11. CLOSING CTA BANNER
+   12. CLOSING CTA BANNER
    -------------------------------------------------------------------------- */
 .cta-banner-section {
   padding: 4.5rem 0;
@@ -1282,7 +1312,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   12. FOOTER
+   13. FOOTER
    -------------------------------------------------------------------------- */
 .footer-main {
   background-color: var(--ink);
@@ -1388,7 +1418,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   13. OFFICIAL FLOATING WHATSAPP BUTTON & TOOLTIP
+   14. OFFICIAL FLOATING WHATSAPP BUTTON & TOOLTIP
    -------------------------------------------------------------------------- */
 .floating-wa-btn {
   position: fixed;
@@ -1419,7 +1449,6 @@ button {
   fill: #FFFFFF;
 }
 
-/* Pulse Ring Animation */
 .floating-wa-btn::before {
   content: '';
   position: absolute;
@@ -1438,7 +1467,6 @@ button {
   100% { transform: scale(0.95); opacity: 0; }
 }
 
-/* Floating Tooltip */
 .floating-wa-tooltip {
   position: absolute;
   right: 76px;
@@ -1460,7 +1488,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   14. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON
+   15. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON
    -------------------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -1505,7 +1533,6 @@ button {
   transform: translateY(0);
 }
 
-/* Circular Close Button */
 .modal-close-btn {
   position: absolute;
   top: 1.25rem;
@@ -1573,10 +1600,7 @@ button {
   padding-right: 2rem;
 }
 
-.modal-price {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--maroon);
+.modal-price-box {
   margin-bottom: 1.35rem;
 }
 
@@ -1602,18 +1626,28 @@ button {
 .size-options {
   display: flex;
   gap: 0.6rem;
+  flex-wrap: wrap;
 }
 
 .size-btn {
-  width: 44px;
-  height: 44px;
+  padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background-color: var(--ivory);
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
   transition: all var(--transition-fast);
+}
+
+.size-btn .size-price-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 .size-btn:hover, .size-btn.selected {
@@ -1622,8 +1656,12 @@ button {
   color: var(--paper);
 }
 
+.size-btn:hover .size-price-sub, .size-btn.selected .size-price-sub {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 /* --------------------------------------------------------------------------
-   15. RESPONSIVE BREAKPOINTS
+   16. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .hero-grid {
@@ -1687,7 +1725,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. REDUCED MOTION ACCESSIBILITY
+   17. REDUCED MOTION ACCESSIBILITY
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
