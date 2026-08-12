@@ -1,23 +1,23 @@
 /**
  * Mahallu Shop - Interactive Application JavaScript
  * Brand: Mahallu Shop BY: RAJIBA (Bandung)
- * WhatsApp CS: 0857-2345-065 (https://wa.me/628572345065)
+ * Official WhatsApp CS / Catalog: https://wa.me/c/6285723450656
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const WA_NUMBER = '628572345065';
+  const WA_NUMBER = '6285723450656';
+  const WA_CATALOG_URL = 'https://wa.me/c/6285723450656';
 
   // Helper function to build dynamic WhatsApp URL
   function buildWaUrl(productName = '', size = '', price = '') {
-    let message = '';
     if (productName) {
       const sizeText = size ? ` (Ukuran: ${size})` : '';
       const priceText = price ? ` - ${price}` : '';
-      message = `Halo Mahallu Shop! Saya tertarik dengan produk "${productName}"${sizeText}${priceText}, apakah masih tersedia?`;
+      const message = `Halo Mahallu Shop! Saya tertarik dengan produk "${productName}"${sizeText}${priceText}, apakah masih tersedia?`;
+      return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
     } else {
-      message = `Halo Mahallu Shop! Saya lihat katalognya dan tertarik dengan koleksinya, boleh minta info lebih lanjut?`;
+      return WA_CATALOG_URL;
     }
-    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
   }
 
   // Official WhatsApp Brand SVG Path
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. PRODUCT DATA (CARD 2 UPDATED TO HD NO-PHONE MODEL PHOTO & SPECIFIC PRICELIST)
+  // 2. PRODUCT DATA
   // --------------------------------------------------------------------------
   const products = [
     {
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { size: 'XXL', originalPrice: 'Rp 300.000', discountPrice: 'Rp 132.600', badge: '-56%' }
       ],
       material: 'Bahan Tile Brokat Etnik & Furing Katun Silk Adem',
-      image: 'assets/prod-yasmin-tara-hd.jpg', // HD No-Phone Model Photo from WhatsApp 16.48.20
+      image: 'assets/prod-yasmin-tara-hd.jpg',
       badgeClass: 'gamis',
       desc: 'Yasmin Tara by Mahallu shop — Soft beige manis, brokat mewah & furing adem. Sangat cocok dipadukan dengan hijab voal untuk kondangan.'
     },
