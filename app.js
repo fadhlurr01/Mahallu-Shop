@@ -118,7 +118,44 @@ document.addEventListener('DOMContentLoaded', () => {
       material: 'Bahan Exclusive Jetblack & Mutiara Shoulder Ruffle',
       image: 'assets/prod-black-pearl-exact-model.jpg',
       badgeClass: 'gamis',
-      desc: 'Gamis Exclusive Black Pearl — Dress warna hitam pekat eksklusif dengan hiasan mutiara di leher & pundak ruffle bergelombang.'
+      desc: 'Exclusive Black Pearl by Mahallu shop — Warna hitam pekat elegan dengan aksen mutiara & ruffle di bahu. Sangat mewah untuk acara pesta malam.'
+    },
+    {
+      id: 'prod-annisa-white',
+      title: 'Annisa Syar\'i Set Pure White',
+      category: 'syari',
+      categoryLabel: 'Set Syar\'i',
+      originalPrice: 'Rp 265.000',
+      discountPrice: 'Rp 164.999',
+      discountBadge: '-38%',
+      sizes: [
+        { size: 'S', originalPrice: 'Rp 265.000', discountPrice: 'Rp 164.999', badge: '-38%' },
+        { size: 'M', originalPrice: 'Rp 265.000', discountPrice: 'Rp 170.999', badge: '-35%' },
+        { size: 'L', originalPrice: 'Rp 265.000', discountPrice: 'Rp 175.999', badge: '-34%' },
+        { size: 'XL', originalPrice: 'Rp 265.000', discountPrice: 'Rp 185.999', badge: '-30%' }
+      ],
+      material: 'Bahan Premium Ceruty Armany & Sulam Perak Exquisite',
+      image: 'assets/prod-annisa-white.png',
+      badgeClass: 'syari',
+      desc: 'Annisa Syar\'i Set Pure White by Mahallu shop — Warna putih suci nan anggun dengan khimar senada & aplikasi sulam perak mewah pada lengan dan klim bawah.'
+    },
+    {
+      id: 'prod-zahra-tunik-pink',
+      title: 'Zahra Tunik & Lace Set Dusty Pink',
+      category: 'gamis',
+      categoryLabel: 'Gamis & Dress',
+      originalPrice: 'Rp 250.000',
+      discountPrice: 'Rp 117.000',
+      discountBadge: '-53%',
+      sizes: [
+        { size: 'M', originalPrice: 'Rp 250.000', discountPrice: 'Rp 117.000', badge: '-53%' },
+        { size: 'L', originalPrice: 'Rp 275.000', discountPrice: 'Rp 128.700', badge: '-53%' },
+        { size: 'XL', originalPrice: 'Rp 300.000', discountPrice: 'Rp 140.400', badge: '-53%' }
+      ],
+      material: 'Bahan Brokat Floral Lace & Celana Soft Crepe Adem',
+      image: 'assets/prod-zahra-tunik-pink.png',
+      badgeClass: 'gamis',
+      desc: 'Zahra Tunik Set Dusty Pink by Mahallu shop — Set Tunik & Celana warna dusty pink dengan lapisan brokat floral lace asimetris yang sangat feminin & manis.'
     }
   ];
 
