@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAHALLU SHOP - ULTRA MODERN LUXURY BOUTIQUE DESIGN SYSTEM (BRAND HERITAGE REDESIGN)
+   MAHALLU SHOP - ULTRA MODERN LUXURY BOUTIQUE DESIGN SYSTEM (BALANCED LOOKBOOK GRID)
    Brand: Mahallu Shop BY: RAJIBA (Bandung)
    ========================================================================== */
 
@@ -676,7 +676,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   6. BRAND HERITAGE & STORY SECTION (NEW HIGH-FASHION MUSLIMAH THEME)
+   6. BRAND HERITAGE & STORY SECTION
    -------------------------------------------------------------------------- */
 .story-section {
   padding: 6.5rem 0;
@@ -722,7 +722,6 @@ button {
   margin-bottom: 2.25rem;
 }
 
-/* Stats Counter Grid */
 .story-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -760,7 +759,6 @@ button {
   color: var(--ink-soft);
 }
 
-/* Visual Collage Wrapper */
 .story-visual-wrapper {
   position: relative;
 }
@@ -1177,54 +1175,39 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. LOOKBOOK (INSPIRASI OUTFIT) - HORIZONTAL SCROLL ROW
+   9. LOOKBOOK (INSPIRASI OUTFIT) - BALANCED 4-COLUMN DESKTOP GRID (NO SCROLLBAR FIX)
    -------------------------------------------------------------------------- */
 .lookbook-section {
   padding: 6rem 0;
 }
 
 .lookbook-row-wrapper {
-  position: relative;
+  width: 100%;
 }
 
 .lookbook-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.75rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 1.75rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) var(--ivory-soft);
-}
-
-.lookbook-row::-webkit-scrollbar {
-  height: 6px;
-}
-
-.lookbook-row::-webkit-scrollbar-track {
-  background: var(--line-subtle);
-  border-radius: 10px;
-}
-
-.lookbook-row::-webkit-scrollbar-thumb {
-  background: var(--gold);
-  border-radius: 10px;
+  width: 100%;
 }
 
 .lookbook-card {
-  flex: 0 0 320px;
-  scroll-snap-align: start;
+  width: 100%;
   background-color: var(--paper);
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-smooth);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
 }
 
 .lookbook-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(110, 42, 58, 0.12);
+  border-color: rgba(195, 158, 99, 0.45);
 }
 
 .lookbook-img {
@@ -1232,10 +1215,18 @@ button {
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: top center;
+  transition: transform var(--transition-smooth);
+}
+
+.lookbook-card:hover .lookbook-img {
+  transform: scale(1.04);
 }
 
 .lookbook-content {
   padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .lookbook-tag {
@@ -1249,7 +1240,7 @@ button {
 
 .lookbook-title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--ink);
   margin-bottom: 0.45rem;
 }
@@ -1885,10 +1876,10 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. RESPONSIVE BREAKPOINTS
+   16. RESPONSIVE BREAKPOINTS (BALANCED GRID)
    -------------------------------------------------------------------------- */
 @media (max-width: 1100px) {
-  .catalog-grid {
+  .catalog-grid, .lookbook-row {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1933,7 +1924,7 @@ button {
 }
 
 @media (max-width: 640px) {
-  .catalog-grid {
+  .catalog-grid, .lookbook-row {
     grid-template-columns: 1fr;
   }
   .nav-menu, .btn-wa-mini {
