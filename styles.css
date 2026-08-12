@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAHALLU SHOP - ULTRA MODERN LUXURY BOUTIQUE DESIGN SYSTEM (BALANCED LOOKBOOK GRID)
+   MAHALLU SHOP - ULTRA MODERN LUXURY BOUTIQUE DESIGN SYSTEM (SCROLL ANIMATION SYSTEM)
    Brand: Mahallu Shop BY: RAJIBA (Bandung)
    ========================================================================== */
 
@@ -1175,7 +1175,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   9. LOOKBOOK (INSPIRASI OUTFIT) - BALANCED 4-COLUMN DESKTOP GRID (NO SCROLLBAR FIX)
+   9. LOOKBOOK (INSPIRASI OUTFIT) - BALANCED 4-COLUMN DESKTOP GRID
    -------------------------------------------------------------------------- */
 .lookbook-section {
   padding: 6rem 0;
@@ -1876,7 +1876,32 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. RESPONSIVE BREAKPOINTS (BALANCED GRID)
+   16. ULTRA SMOOTH SCROLL REVEAL ANIMATION SYSTEM (SCROLL TRANSITIONS)
+   -------------------------------------------------------------------------- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(4px);
+  transition: opacity 0.85s var(--ease-smooth), 
+              transform 0.85s var(--ease-smooth), 
+              filter 0.85s var(--ease-smooth);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Staggered Delay Utilities for Cards & Grid Elements */
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+
+/* --------------------------------------------------------------------------
+   17. RESPONSIVE BREAKPOINTS (BALANCED GRID)
    -------------------------------------------------------------------------- */
 @media (max-width: 1100px) {
   .catalog-grid, .lookbook-row {
@@ -1946,7 +1971,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   17. REDUCED MOTION ACCESSIBILITY
+   18. REDUCED MOTION ACCESSIBILITY
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -1954,5 +1979,10 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
