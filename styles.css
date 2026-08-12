@@ -190,7 +190,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   3. HEADER & GLASSMORPHISM NAV (CLEAN NON-CLUTTERED ACTIONS)
+   3. HEADER & GLASSMORPHISM NAV
    -------------------------------------------------------------------------- */
 .header-sticky {
   position: sticky;
@@ -371,7 +371,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   4. HERO SECTION & SLEEK LUXURY EDITORIAL HERO SHOWCASE (NON-HEAVY)
+   4. HERO SECTION & SLEEK LUXURY EDITORIAL HERO SHOWCASE
    -------------------------------------------------------------------------- */
 .hero-section {
   padding: 4.5rem 0 5.5rem 0;
@@ -520,7 +520,7 @@ button {
   position: relative;
 }
 
-/* Sleek Luxury Editorial Hero Showcase (No Heavy Double Border) */
+/* Sleek Luxury Editorial Hero Showcase */
 .hero-card-editorial {
   position: relative;
   border-radius: 28px;
@@ -1439,7 +1439,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   12. CLOSING CTA BANNER (TRANSLUCENT GLASS + ISLAMIC ARABESQUE PATTERN)
+   12. CLOSING CTA BANNER (ULTRA-LIGHT TRANSLUCENT FROSTED GLASS + ISLAMIC ARABESQUE PATTERN)
    -------------------------------------------------------------------------- */
 .cta-banner-section {
   padding: 4.5rem 0;
@@ -1447,20 +1447,20 @@ button {
 }
 
 .cta-banner-card {
-  background: linear-gradient(135deg, rgba(74, 21, 33, 0.9) 0%, rgba(110, 42, 58, 0.84) 100%);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.84) 0%, rgba(248, 244, 239, 0.72) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-radius: 36px 14px 36px 14px;
+  border-radius: 32px;
   padding: 4.5rem 2.5rem;
   text-align: center;
-  color: var(--paper);
-  box-shadow: 0 28px 70px rgba(74, 21, 33, 0.28);
+  color: var(--ink);
+  box-shadow: 0 20px 60px rgba(43, 36, 32, 0.07);
   position: relative;
   overflow: hidden;
-  border: 1.5px solid rgba(195, 158, 99, 0.55);
+  border: 1.5px solid rgba(195, 158, 99, 0.45);
 }
 
-/* Radial Golden Glow in background */
+/* Golden Warm Glow in background */
 .cta-banner-card::before {
   content: '';
   position: absolute;
@@ -1468,12 +1468,12 @@ button {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(195, 158, 99, 0.28) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(195, 158, 99, 0.18) 0%, transparent 60%);
   pointer-events: none;
   z-index: 1;
 }
 
-/* Authentic Islamic Arabesque Star & Brokat Pattern Overlay */
+/* High-Contrast Islamic Arabesque Star & Floral Brokat Pattern Overlay */
 .cta-banner-card::after {
   content: '';
   position: absolute;
@@ -1481,9 +1481,9 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.12' fill-rule='evenodd'%3E%3Cpath d='M40 40L20 20l20-20 20 20-20 20zm0 0l20 20-20 20-20-20 20-20zm-20 0L0 20l20-20 20 20-20 20zm40 0l20 20-20 20-20-20 20-20z'/%3E%3Cpath d='M40 20a20 20 0 1 0 0 40 20 20 0 0 0 0-40z' fill-none stroke='%23D4AF37' stroke-opacity='0.15' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C39E63' fill-opacity='0.16' fill-rule='evenodd'%3E%3Cpath d='M40 40L20 20l20-20 20 20-20 20zm0 0l20 20-20 20-20-20 20-20zm-20 0L0 20l20-20 20 20-20 20zm40 0l20 20-20 20-20-20 20-20z'/%3E%3Cpath d='M40 20a20 20 0 1 0 0 40 20 20 0 0 0 0-40z' fill='none' stroke='%23C39E63' stroke-opacity='0.25' stroke-width='1.5'/%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
-  opacity: 0.85;
+  opacity: 1;
   z-index: 1;
 }
 
@@ -1497,44 +1497,50 @@ button {
   font-size: clamp(2.1rem, 3.8vw, 3.2rem);
   margin-bottom: 1.1rem;
   line-height: 1.18;
+  color: var(--ink);
   letter-spacing: -0.01em;
+}
+
+.cta-banner-title em {
+  font-style: italic;
+  color: var(--maroon);
+  font-weight: 400;
 }
 
 .cta-banner-desc {
   font-size: 1.12rem;
-  color: rgba(255, 253, 251, 0.92);
+  color: var(--ink-soft);
   max-width: 650px;
   margin: 0 auto 2.5rem auto;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.7;
 }
 
-.btn-cta-white {
+.btn-cta-gold {
   display: inline-flex;
   align-items: center;
   gap: 0.85rem;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F4EF 100%);
-  color: var(--maroon-deep);
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+  color: #FFFFFF;
   font-weight: 800;
   font-size: 1.08rem;
   padding: 1.05rem 2.4rem;
   border-radius: 50px;
-  border: 1.5px solid rgba(195, 158, 99, 0.4);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 28px rgba(110, 42, 58, 0.32);
   transition: all var(--transition-fast);
 }
 
-.btn-cta-white:hover {
-  background: #FFFFFF;
+.btn-cta-gold:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.4);
-  border-color: var(--gold);
+  box-shadow: 0 14px 34px rgba(110, 42, 58, 0.42);
+  background: linear-gradient(135deg, #7C2E41 0%, #581927 100%);
 }
 
-.btn-cta-white svg {
+.btn-cta-gold svg {
   width: 22px;
   height: 22px;
-  fill: var(--whatsapp-dark);
+  fill: #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------
