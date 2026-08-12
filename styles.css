@@ -255,12 +255,12 @@ button {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 2rem;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--ink-soft);
   position: relative;
@@ -1266,11 +1266,183 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   10. TESTIMONIALS (ULASAN PELANGGAN)
+   10. PANDUAN UKURAN BOUTIQUE (SIZE GUIDE TABLE S-XXL)
+   -------------------------------------------------------------------------- */
+.size-guide-section {
+  padding: 6rem 0;
+  background-color: var(--paper);
+  border-top: 1px solid var(--line-subtle);
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+.size-guide-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 244, 239, 0.7));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  padding: 2.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.size-guide-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.94rem;
+}
+
+.size-guide-table th {
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-deep));
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 700;
+  padding: 1.1rem 1rem;
+}
+
+.size-guide-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.size-guide-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.size-guide-table td {
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.size-guide-table tr:hover td {
+  background-color: rgba(195, 158, 99, 0.08);
+}
+
+.size-badge {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 10px rgba(195, 158, 99, 0.3);
+}
+
+.size-guide-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.size-guide-footer strong {
+  color: var(--maroon);
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ SECTION (INTERACTIVE ACCORDION Tailored for Muslimah Fashion)
+   -------------------------------------------------------------------------- */
+.faq-section {
+  padding: 6rem 0;
+  background-color: var(--ivory-soft);
+}
+
+.faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.faq-item {
+  background-color: var(--paper);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.faq-item:hover {
+  border-color: rgba(110, 42, 58, 0.35);
+}
+
+.faq-item.active {
+  border-color: var(--maroon);
+  box-shadow: 0 10px 30px rgba(110, 42, 58, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.35rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.faq-item.active .faq-question {
+  color: var(--maroon);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--gold-dark);
+  transition: transform var(--transition-fast);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--maroon);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-answer-inner {
+  padding: 0 1.75rem 1.5rem 1.75rem;
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.faq-answer-inner strong {
+  color: var(--maroon);
+}
+
+/* --------------------------------------------------------------------------
+   12. TESTIMONIALS (ULASAN PELANGGAN)
    -------------------------------------------------------------------------- */
 .testimonials-section {
   padding: 6rem 0;
-  background-color: var(--ivory-soft);
+  background-color: var(--paper);
   border-top: 1px solid var(--line-subtle);
   border-bottom: 1px solid var(--line-subtle);
 }
@@ -1283,7 +1455,7 @@ button {
 }
 
 .testimonial-card {
-  background-color: var(--paper);
+  background-color: var(--ivory-soft);
   border-radius: var(--radius-lg);
   padding: 2rem;
   border: 1px solid var(--line);
@@ -1382,10 +1554,11 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   11. CARA ORDER (4 STEPS)
+   13. CARA ORDER (4 STEPS)
    -------------------------------------------------------------------------- */
 .order-steps-section {
   padding: 6rem 0;
+  background-color: var(--ivory-soft);
 }
 
 .steps-grid {
@@ -1439,7 +1612,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   12. CLOSING CTA BANNER (ULTRA-LIGHT TRANSLUCENT FROSTED GLASS + ISLAMIC ARABESQUE PATTERN)
+   14. CLOSING CTA BANNER (TRANSLUCENT FROSTED GLASS + ISLAMIC ARABESQUE PATTERN)
    -------------------------------------------------------------------------- */
 .cta-banner-section {
   padding: 4.5rem 0;
@@ -1544,7 +1717,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   13. FOOTER & LINK INTEGRATION
+   15. FOOTER & LINK INTEGRATION
    -------------------------------------------------------------------------- */
 .footer-main {
   background-color: var(--ink);
@@ -1682,7 +1855,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   14. OFFICIAL FLOATING WHATSAPP BUTTON & TOOLTIP
+   16. OFFICIAL FLOATING WHATSAPP BUTTON & TOOLTIP
    -------------------------------------------------------------------------- */
 .floating-wa-btn {
   position: fixed;
@@ -1752,7 +1925,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   15. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON
+   17. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON
    -------------------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -1925,7 +2098,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   16. ULTRA SMOOTH SCROLL REVEAL ANIMATION SYSTEM
+   18. ULTRA SMOOTH SCROLL REVEAL ANIMATION SYSTEM
    -------------------------------------------------------------------------- */
 .scroll-reveal {
   opacity: 0;
@@ -1950,7 +2123,7 @@ button {
 .delay-4 { transition-delay: 0.48s; }
 
 /* --------------------------------------------------------------------------
-   17. RESPONSIVE BREAKPOINTS
+   19. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 1100px) {
   .catalog-grid, .lookbook-row {
@@ -2020,7 +2193,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   18. REDUCED MOTION ACCESSIBILITY
+   20. REDUCED MOTION ACCESSIBILITY
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

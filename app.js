@@ -310,7 +310,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------------------------------
-  // 4. INTERSECTION OBSERVER FOR SECTION HEADERS & MAJOR BLOCKS (ALWAYS KEEP PRODUCT CARDS VISIBLE)
+  // 4. FAQ ACCORDION INTERACTION LOGIC
+  // --------------------------------------------------------------------------
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const header = item.querySelector('.faq-question');
+      if (!header) return;
+
+      header.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        
+        // Close all other items for clean accordion effect
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          const otherAns = otherItem.querySelector('.faq-answer');
+          if (otherAns) otherAns.style.maxHeight = null;
+        });
+
+        if (!isOpen) {
+          item.classList.add('active');
+          const answer = item.querySelector('.faq-answer');
+          if (answer) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        }
+      });
+    });
+  }
+
+  initFaqAccordion();
+
+  // --------------------------------------------------------------------------
+  // 5. INTERSECTION OBSERVER FOR SECTION HEADERS & MAJOR BLOCKS
   // --------------------------------------------------------------------------
   function initScrollReveals() {
     const targetSelectors = [
@@ -319,6 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '.hero-card-wrapper',
       '.story-content',
       '.story-visual-wrapper',
+      '.size-guide-card',
+      '.faq-accordion',
       '.bank-trust-banner',
       '.cta-banner-card'
     ];
@@ -347,3 +381,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initScrollReveals();
 });
+
