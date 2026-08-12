@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
   }
 
+  // Official WhatsApp Brand SVG Path
+  const WA_SVG_ICON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.932 9.932 0 001.356 5.02L2 22l5.14-1.344a9.957 9.957 0 004.872 1.28h.005c5.507 0 9.99-4.479 9.992-9.985A9.95 9.95 0 0012.012 2zm5.834 14.498c-.247.692-1.242 1.306-1.996 1.472-.516.113-1.19.16-3.468-.781-2.914-1.205-4.786-4.17-4.933-4.364-.145-.195-1.195-1.593-1.195-3.038 0-1.445.756-2.155 1.025-2.449.27-.294.588-.368.784-.368.196 0 .392.002.563.01.182.007.427-.069.667.507.247.592.834 2.035.908 2.183.073.148.122.32.025.513-.098.196-.148.318-.295.49-.147.172-.309.385-.441.517-.147.147-.301.308-.13.6.172.293.766 1.264 1.644 2.046 1.13 1.006 2.083 1.317 2.376 1.464.294.147.466.123.638-.073.172-.196.736-.857.933-1.15.196-.294.392-.245.662-.147.27.098 1.716.809 2.01 1.956.294.147.49.294.564.417.073.123.073.71-.174 1.402z"/></svg>`;
+
   // --------------------------------------------------------------------------
   // 1. MOBILE NAV DRAWER TOGGLE
   // --------------------------------------------------------------------------
@@ -41,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------------------------------
-  // 2. PRODUCT DATA (4 PRISTINE MAHALLU SHOP INSTAGRAM PRODUCTS)
+  // 2. PRODUCT DATA (4 PRISTINE MAHALLU SHOP INSTAGRAM PRODUCTS WITH EXACT USER PRICES & PHOTOS)
   // --------------------------------------------------------------------------
   const products = [
     {
@@ -49,20 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Annisa Syar\'i Set Maroon',
       category: 'syari',
       categoryLabel: 'Set Syar\'i',
-      price: 'Rp 285.000',
+      price: 'Rp 160.999',
       material: 'Bahan Premium Ceruty Armany & Sulam Tangan Exquisite',
-      image: 'assets/prod-annisa-maroon-full.jpg',
+      image: 'assets/prod-annisa-maroon-model.jpg',
       badgeClass: 'syari',
-      desc: 'Annisa by Mahallu shop — Set Gamis Syar\'i mewah warna deep maroon dengan aplikasi sulam bunga anggun di khimar panjang & manset lengan. Menggunakan kancing depan ramah busui.'
+      desc: 'Annisa by Mahallu shop — Set Gamis Syar\'i mewah warna deep maroon dengan aplikasi sulam bunga anggun di khimar panjang & manset lengan. Busui friendly.'
     },
     {
       id: 'prod-yasmin-tara',
       title: 'Yasmin Tara Gamis Brokat Soft Beige',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 265.000',
+      price: 'Rp 160.999',
       material: 'Bahan Tile Brokat Etnik & Furing Katun Silk Adem',
-      image: 'assets/prod-yasmin-tara.jpg',
+      image: 'assets/prod-yasmin-tara-wa.jpg',
       badgeClass: 'gamis',
       desc: 'Yasmin Tara by Mahallu shop — Warnanya soft beige manis, brokatnya mewah & tidak gatal di kulit. Lengan puff modern dengan kerah Shanghai yang sangat pas untuk kondangan.'
     },
@@ -71,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Karina Gamis Outer Lace Espresso',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 275.000',
+      price: 'Rp 117.000',
       material: 'Outer Tile Etnik Lace & Inner Ceruty Armany',
-      image: 'assets/prod-karina-lace-brown.jpg',
+      image: 'assets/prod-karina-lace-brown-model.jpg',
       badgeClass: 'gamis',
       desc: 'Karina by Mahallu shop — Kalau kamu suka gamis yang kelihatan mewah tapi tetap elegan, Karina ini wajib dimiliki. Outer lace bermotif floral dengan warna cokelat espresso mewah.'
     },
@@ -82,9 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Gamis Exclusive Black Pearl',
       category: 'gamis',
       categoryLabel: 'Gamis & Dress',
-      price: 'Rp 255.000',
+      price: 'Rp 139.000',
       material: 'Bahan Exclusive Jetblack & Mutiara Shoulder Ruffle',
-      image: 'assets/dress-black-pearl.jpg',
+      image: 'assets/dress-black-pearl-model.jpg',
       badgeClass: 'gamis',
       desc: 'Gamis Exclusive Black Pearl — Dress warna hitam pekat eksklusif dengan hiasan mutiara di leher & pundak ruffle bergelombang. Memberikan siluet tinggi & sangat anggun untuk pesta malam.'
     }
@@ -119,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="product-material">${prod.material}</p>
           <div class="product-actions">
             <a href="${buildWaUrl(prod.title)}" target="_blank" rel="noopener" class="btn-order-wa">
-              <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              ${WA_SVG_ICON}
               Order via WA
             </a>
             <button class="btn-quickview" data-id="${prod.id}" aria-label="Lihat detail ${prod.title}">

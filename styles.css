@@ -28,11 +28,14 @@
   --plum: #7A4E65;
   --plum-light: rgba(122, 78, 101, 0.12);
   
+  /* Official WhatsApp Green Brand Colors */
+  --whatsapp: #25D366;
+  --whatsapp-dark: #128C7E;
+  --whatsapp-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+
   /* Borders & Shadows */
   --line: rgba(195, 158, 99, 0.25);
   --line-subtle: rgba(35, 28, 24, 0.08);
-  --whatsapp: #25D366;
-  --whatsapp-dark: #128C7E;
 
   /* Typography */
   --font-display: 'Fraunces', 'Playfair Display', serif;
@@ -48,6 +51,7 @@
   --shadow-md: 0 12px 32px rgba(43, 36, 32, 0.07);
   --shadow-lg: 0 24px 50px rgba(43, 36, 32, 0.12);
   --shadow-gold: 0 8px 24px rgba(195, 158, 99, 0.2);
+  --shadow-wa: 0 8px 24px rgba(37, 211, 102, 0.35);
   
   /* Cubic-Bezier Curves for Ultra-Smooth Transitions */
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
@@ -187,7 +191,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(248, 244, 239, 0.88);
+  background-color: rgba(248, 244, 239, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
@@ -305,8 +309,8 @@ button {
 }
 
 .btn-wa-mini svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   fill: currentColor;
 }
 
@@ -419,6 +423,7 @@ button {
   margin-bottom: 2.75rem;
 }
 
+/* Primary Hero Button with Official WhatsApp Icon */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -438,6 +443,12 @@ button {
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 34px rgba(110, 42, 58, 0.42);
+}
+
+.btn-primary svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 .btn-secondary {
@@ -852,11 +863,8 @@ button {
 
 .category-pill.gamis { background-color: var(--maroon); }
 .category-pill.syari { background-color: var(--plum); }
-.category-pill.tunik { background-color: var(--sage); }
-.category-pill.hijab { background-color: var(--gold-dark); }
-.category-pill.mukena { background-color: var(--plum); }
 
-/* Hanging Price Tag Badge (clip-path tag design) */
+/* Hanging Price Tag Badge */
 .hanging-price-tag {
   position: absolute;
   top: 1.15rem;
@@ -1380,7 +1388,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   13. FLOATING WHATSAPP BUTTON & TOOLTIP
+   13. OFFICIAL FLOATING WHATSAPP BUTTON & TOOLTIP
    -------------------------------------------------------------------------- */
 .floating-wa-btn {
   position: fixed;
@@ -1390,25 +1398,25 @@ button {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-color: var(--whatsapp);
-  color: #fff;
+  background: var(--whatsapp-gradient);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+  box-shadow: var(--shadow-wa);
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
 .floating-wa-btn:hover {
   transform: scale(1.08);
-  background-color: var(--whatsapp-dark);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
 }
 
 .floating-wa-btn svg {
-  width: 34px;
-  height: 34px;
-  fill: currentColor;
+  width: 36px;
+  height: 36px;
+  fill: #FFFFFF;
 }
 
 /* Pulse Ring Animation */
@@ -1419,14 +1427,14 @@ button {
   height: 100%;
   border-radius: 50%;
   background-color: var(--whatsapp);
-  opacity: 0.7;
+  opacity: 0.75;
   z-index: -1;
   animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
 @keyframes pulse-ring {
   0% { transform: scale(0.95); opacity: 0.8; }
-  50% { transform: scale(1.35); opacity: 0; }
+  50% { transform: scale(1.38); opacity: 0; }
   100% { transform: scale(0.95); opacity: 0; }
 }
 
@@ -1452,7 +1460,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   14. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON (EXACT IMAGE 5 DESIGN)
+   14. QUICK VIEW MODAL & REFINED CIRCULAR CLOSE BUTTON
    -------------------------------------------------------------------------- */
 .modal-overlay {
   position: fixed;
@@ -1497,7 +1505,7 @@ button {
   transform: translateY(0);
 }
 
-/* Refined Circular Close Button matching user screenshot Image 5 */
+/* Circular Close Button */
 .modal-close-btn {
   position: absolute;
   top: 1.25rem;
@@ -1505,8 +1513,8 @@ button {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #F8F4EE; /* Warm ivory soft fill */
-  border: 1.5px solid rgba(195, 158, 99, 0.35); /* Elegant gold/tan thin ring */
+  background-color: #F8F4EE;
+  border: 1.5px solid rgba(195, 158, 99, 0.35);
   color: #231C18;
   font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
@@ -1562,7 +1570,7 @@ button {
   font-size: 1.75rem;
   color: var(--ink);
   margin-bottom: 0.55rem;
-  padding-right: 2rem; /* Leave space so title doesn't collide with close button */
+  padding-right: 2rem;
 }
 
 .modal-price {
