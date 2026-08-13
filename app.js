@@ -388,7 +388,6 @@ document.addEventListener('DOMContentLoaded', () => {
       '.hero-card-wrapper',
       '.story-content',
       '.story-visual-wrapper',
-      '.size-guide-card',
       '.faq-accordion',
       '.bank-trust-banner',
       '.cta-banner-card'
